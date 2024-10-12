@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kreon&family=KoHo&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4">Dashboard</h2>
+                        <div class="mb-4">
+                            <h3>Detected</h3>
+                            <ul id="detected-list" class="list-group">
+                                <!-- Detected websites will be added here dynamically if their is no d--> 
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h3>Blocked</h3>
+                            <ul id="blocked-list" class="list-group">
+                                <!-- Blocked websites will be added here dynamically -->
+                            </ul>
+                        </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button id="export-btn" class="btn btn-secondary">Export Blocked Sites</button>
+                            <div class="d-flex">
+                                <input type="file" id="import-file" class="d-none" accept=".json">
+                                <button id="import-btn" class="btn btn-secondary">Import Blocked Sites</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

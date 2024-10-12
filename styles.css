@@ -1,0 +1,156 @@
+body {
+    font-family: 'Kreon', serif;
+    background-image: url('BC.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.card {
+    background-color: rgba(33, 37, 41, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2, h3 {
+    color: var(--bs-light);
+}
+
+.list-group-item {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.btn {
+    font-family: 'KoHo', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-block {
+    background-color: #E25252;
+    border-color: #E25252;
+}
+
+.btn-unblock {
+    background-color: #52E282;
+    border-color: #52E282;
+}
+
+.detected-text {
+    color: #D15151;
+}
+
+.blocked-text {
+    color: #51D178;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-animation {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+#detected-list, #blocked-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+#detected-list::-webkit-scrollbar, #blocked-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#detected-list::-webkit-scrollbar-thumb, #blocked-list::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-block:hover, .btn-unblock:hover {
+    animation: pulse 0.5s ease infinite;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-body {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: rotate 1s linear infinite;
+    margin-left: 10px;
+}
